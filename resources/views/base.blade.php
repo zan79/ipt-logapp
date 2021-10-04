@@ -67,10 +67,10 @@
     </div>
   @endif
 
-  @if (session('item_success'))
+  @if (session('action_success'))
     <div class="alert alert-success" role="alertdialog">
       <div class="container">
-        {{ session('item_success') }}
+        {{ session('action_success') }}
       </div>
     </div>
   @endif

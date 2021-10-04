@@ -51,7 +51,7 @@ class ItemController extends Controller
         event(new UserItemAction("Item Created with ID#$item->id"));
      
         return redirect()->route('items.index')
-        ->with('success','Item created successfully.');
+        ->with('action_success','Item created successfully.');
     }
 
     /**
@@ -97,7 +97,7 @@ class ItemController extends Controller
         event(new UserItemAction("Item Updated with ID#$item->id"));
     
         return redirect()->route('items.index')
-        ->with('success','Item updated successfully');
+        ->with('action_success','Item updated successfully');
     }
 
     /**
@@ -113,6 +113,6 @@ class ItemController extends Controller
         event(new UserItemAction("Item Deleted with ID#$item->id"));
 
         return redirect()->route('items.index')
-        ->with('success','Item deleted successfully');
+        ->with('action_success','Item deleted successfully');
     }
 }
