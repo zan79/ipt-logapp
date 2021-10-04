@@ -50,7 +50,7 @@ class AuthController extends Controller
         //     $mail->from('dummyqwerty34@gmail.com', 'Prelim App');
         // });
 
-        return redirect('/login')->with('Message_Info', 'We sent you an email, please verify it to complete your account registration.');
+        return redirect('/login')->with('Message_Success', 'Account created, you can now proceed to log in.');
     }
 
     public function login(Request $request){
@@ -70,9 +70,9 @@ class AuthController extends Controller
             return back()->with('Error', 'Invalid Credentials');
         }
 
-        if(!$user || $user->email_verified_at==null){
-            return redirect('/login')->with('Error', 'Account not verified. Please check your email to verify your account.');
-        }
+        // if(!$user || $user->email_verified_at==null){
+        //     return redirect('/login')->with('Error', 'Account not verified. Please check your email to verify your account.');
+        // }
 
         return redirect('/items');
     }
